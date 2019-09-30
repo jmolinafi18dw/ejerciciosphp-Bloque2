@@ -1,32 +1,35 @@
+<html>
+<head>
+<title>Factorial</title>
+</head>
 <body>
 <?php
-$numeros = array();
-$factorial = array();
+$numero = array();
+$nfactorial = array();
 
-$fact1 = gmp_fact(5); // 5 * 4 * 3 * 2 * 1
-echo gmp_strval($fact1) . "\n";
-
-$fact2 = gmp_fact(50); // 50 * 49 * 48, ... etc
-echo gmp_strval($fact2) . "\n";
+function factorial($numero)
+{
+    $total=1;
+    for ( $i = $numero ; $i >= 1 ; $i--) 
+    {
+        $total=$total*$i;
+    }
+    return $total;
+}
 
 for ($x=0;$x<10;$x++) {
-    array_push($numeros,$x);
+    array_push($numero,$x);
 }
 
-for ($x=0;$x<count($numeros);$x++){
-    echo $numeros[$x]."--";
-
-}
-echo "<br>";
-for ($x=0;$x<count($numeros);$x++){
-    echo $factorial[$x]."--";
-
-}
-for ($x=1;$x<=count($numeros);$x++) {
-    $mes_nun = $fact;
-    array_push($factorial,$mes_nun);
+for ($x=0;$x<=count($numero);$x++) {
+    $resultado=factorial($numero[$x]);
+    array_push($nfactorial,$resultado);
 }
 
+for ($x=0;$x<count($numero);$x++){
+    echo $numero[$x]."=".$nfactorial[$x]."<br>";
+
+}
 
 ?>
 </body>
